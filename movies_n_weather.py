@@ -24,12 +24,12 @@ def get_genres():
 #------------------------------------------------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------------------------------------------------
-def weather_info(date):
+def weather_info(date, latitude=5.0689, longitude=-75.5174):
     # Parameters for the API
     url = "https://archive-api.open-meteo.com/v1/archive"
     params = {
-        "latitude": 5.0689,
-        "longitude": -75.5174,
+        "latitude": latitude,
+        "longitude": longitude,
         "start_date": date,
         "end_date": date,
         "daily": ["temperature_2m_max", "temperature_2m_min"],
@@ -48,6 +48,7 @@ def weather_info(date):
     temperature_min = daily['temperature_2m_min'][0]
 
     return temperature_max, temperature_min
+
 #------------------------------------------------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------------------------------------------------
