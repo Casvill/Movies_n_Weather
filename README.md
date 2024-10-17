@@ -1,6 +1,7 @@
 # Movie Weather Application
 
-This application allows users to search for a movie by title and retrieve information about the movie's official title, genre(s), and release date. Additionally, it fetches weather conditions (min and max temperature) on the movie's release date based on specified latitude and longitude coordinates, defaulting to the coordinates of Manizales, Colombia, if not provided. The combined data is then sent to a specified webhook for further processing. (You can see it [here](https://webhook.site/#!/view/d5d3bffd-4e65-4017-9b6f-6ef344ec0980/7aa737e6-17a8-4e09-8078-158882beadb0/1))
+This application allows users to search for a movie by title and retrieve information about the movie's official title, genre(s), and release date. Additionally, it fetches weather conditions (min and max temperatures) on the movie's release date based on specified latitude and longitude coordinates, defaulting to the coordinates of Manizales, Colombia, if not provided. The combined data is then sent to a specified webhook for further processing.
+
 
 ## Table of Contents
 
@@ -23,13 +24,12 @@ This application allows users to search for a movie by title and retrieve inform
 
 - Python 3.x
 - `requests` library
-- `pandas` library
-- `retry_requests` library
+- `python-decouple` library
 
 You can install the required libraries using pip:
 
 ```bash
-pip install requests pandas retry_requests
+pip install requests python-decouple
 ```
 
 ## Installation
@@ -37,9 +37,20 @@ Clone the repository to your local machine:
 
 ```bash
 git clone https://github.com/Casvill/Movies_n_Weather.git
-cd .\Movies_n_Weather\
+cd Movies_n_Weather
 ```
 Install the required dependencies (as mentioned above).
+
+## .env File
+Make sure to modify the .env file included in the project with the following content:
+```bash
+WEBHOOK_URL = "https://webhook.site/example"
+THE_MOVIE_DB_API_TOKEN = "Write your movie db api token here"
+
+# Location for which you want to obtain the max and min temperatures
+LATITUDE = 5.0689 
+LONGITUDE = -75.5174
+```
 
 ## Usage
 1. Open a terminal or command prompt.
